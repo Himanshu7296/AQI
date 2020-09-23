@@ -10,7 +10,7 @@ lr = joblib.load("Models/rf_reg_model.pkl")
 def home():
     return render_template('index.html')
 
-@app.route('/', methods = ['POST'])
+@app.route('/predict', methods = ['POST'])
 def main():
     if request.method == 'POST':
         T, TM, Tm, SLP, H, VV, V, VM = float(request.form['T']), float(request.form['TM']), float(request.form['Tm']), float(request.form['SLP']), float(request.form['H']), float(request.form['VV']), float(request.form['V']), float(request.form['VM'])
